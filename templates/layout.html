@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>{{ title }}</title>
+    <link rel="shortcut icon" href="{{ url_for('static', filename='images/favicon.ico') }}"/>
+
+    <!-- Responsive Meta -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="utf-8">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
+    <link href="{{ url_for('static', filename='css/bootstrap.css') }}" rel="stylesheet" type="text/css"/>
+    <link href="{{ url_for('static', filename='css/style.css') }}" rel="stylesheet" type="text/css"/>
+    <link href="{{ url_for('static', filename='css/disease.css') }}" rel="stylesheet" type="text/css"/>
+    <link href="{{ url_for('static', filename='css/font-awesome.min.css') }}" rel="stylesheet"/>
+
+    <!-- Google Fonts -->
+    <link href="//fonts.googleapis.com/css?family=Thasadith:400,400i,700,700i&subset=latin-ext,thai,vietnamese"
+          rel="stylesheet">
+
+    <style>
+        header {
+            background-color: rgba(30, 30, 30, 1);
+        }
+        .navbar-agro {
+            background: linear-gradient(90deg, #228B22 80%, #4e944f 100%) !important;
+            box-shadow: 0 2px 12px 0 rgba(34,139,34,0.10);
+        }
+        .navbar-agro .navbar-brand, .navbar-agro .nav-link, .navbar-agro .navbar-toggler-icon {
+            color: #fff !important;
+        }
+        .navbar-agro .nav-link.active, .navbar-agro .nav-link:hover {
+            color: #e8cd30 !important;
+        }
+        .navbar-slogan {
+            color: #e8cd30;
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin-left: 10px;
+            letter-spacing: 1px;
+        }
+    </style>
+</head>
+
+<body>
+<!-- Navigation -->
+<nav class="navbar navbar-expand-lg navbar-agro">
+    <div class="container">
+        <a class="navbar-brand d-flex align-items-center" href="{{ url_for('home') }}">
+            <img src="{{ url_for('static', filename='images/logo.jpg') }}" style="width: 60px; height: 38px; border-radius:8px; box-shadow:0 2px 8px #4e944f22;" alt="Logo">
+            <span class="navbar-slogan ml-2">Harvest: Smarter Farming, Better Yields</span>
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive"
+                aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item {% if request.endpoint == 'home' %}active{% endif %}">
+                    <a class="nav-link" href="{{ url_for('home') }}">Home</a>
+                </li>
+                <li class="nav-item {% if request.endpoint == 'disease_prediction' %}active{% endif %}">
+                    <a class="nav-link" href="{{ url_for('disease_prediction') }}">Disease Detection</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<!-- Main Content -->
+
+{% block body %}
+
+<!-- Footer -->
+<footer class="text-center py-4 mt-5">
+    <div class="container">
+        <h2 class="logo2 text-center">
+            <a href="{{ url_for('home') }}">Harvest</a>
+        </h2>
+        <p class="text-muted">An Environmental Intelligence Startup</p>
+        <p>Made with ❤️ by Sachin</p>
+        <p>&copy; Copyright 2025 Sachin Acharya</p>
+    </div>
+</footer>
+{% endblock %}
+
+<!-- Scripts -->
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+</body>
+</html>

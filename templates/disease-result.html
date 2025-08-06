@@ -1,0 +1,15 @@
+{% extends 'layout.html' %}
+{% block body %}
+<div class="disease-hero" style="min-height:100vh; border-radius:0;">
+  <div class="container h-100 d-flex align-items-center justify-content-center" style="min-height:80vh;">
+    <div class="w-100" style="max-width:500px; margin:auto;">
+      <h2 class="disease-title text-center mb-2" style="text-shadow:0 2px 8px #228b2255;">Disease Prediction Result</h2>
+      <h4 class="mt-4 text-center" style="color:#e8cd30;text-shadow:0 2px 8px #228b2255;">Predicted: {{ pred_label }}</h4>
+      <div class="mt-4 text-left mx-auto" style="max-width:600px; color:#fff; text-shadow:0 2px 8px #228b2255;">
+        {{ prediction|safe }}
+      </div>
+      <a href="{{ url_for('disease_prediction') }}" class="btn btn-agro btn-lg btn-block mt-4" style="max-width:300px;margin:auto;box-shadow:0 2px 8px #228b2255;">Try Another Image</a>
+    </div>
+  </div>
+</div>
+{% endblock %}

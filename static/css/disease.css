@@ -1,0 +1,84 @@
+/* Agro Disease Prediction Page Styles */
+
+.disease-hero {
+    background: linear-gradient(rgba(34,139,34,0.7), rgba(34,139,34,0.7)), url('../images/farm_background_1.jpg') center center/cover no-repeat;
+    min-height: 100vh;
+    width: 100%;
+    border-radius: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.disease-title {
+    color: #fff;
+    font-weight: 700;
+    letter-spacing: 1px;
+    margin-bottom: 0.5rem;
+    text-shadow: 0 2px 8px #228b2255;
+}
+
+.disease-subtitle {
+    color: #e8cd30;
+    font-size: 1.2rem;
+    margin-bottom: 1.5rem;
+    text-shadow: 0 2px 8px #228b2255;
+}
+
+.upload-label {
+    display: block;
+    font-weight: 600;
+    color: #fff;
+    margin-bottom: 0.5rem;
+    text-shadow: 0 2px 8px #228b2255;
+}
+
+.upload-area {
+    border: 2px dashed #e8cd30;
+    border-radius: 12px;
+    padding: 1.5rem;
+    background: rgba(255,255,255,0.25);
+    transition: border-color 0.3s;
+    cursor: pointer;
+    margin-bottom: 1rem;
+}
+.upload-area.dragover {
+    border-color: #fff;
+    background: rgba(255,255,255,0.35);
+}
+
+#previewImage {
+    display: block;
+    margin: 1rem auto 0 auto;
+    max-width: 320px;
+    border-radius: 12px;
+    box-shadow: 0 2px 12px 0 rgba(34,139,34,0.10);
+    border: 1.5px solid #e0f2e9;
+}
+
+.btn-agro {
+    background: linear-gradient(90deg, #228B22 60%, #4e944f 100%);
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    font-weight: 700;
+    padding: 0.75rem 2.5rem;
+    font-size: 1.15rem;
+    box-shadow: 0 2px 8px 0 rgba(34,139,34,0.10);
+    transition: background 0.2s, box-shadow 0.2s;
+}
+.btn-agro:hover {
+    background: linear-gradient(90deg, #4e944f 60%, #228B22 100%);
+    color: #fff;
+    box-shadow: 0 4px 16px 0 rgba(34,139,34,0.18);
+}
+
+@media (max-width: 600px) {
+    .disease-title, .disease-subtitle {
+        text-align: center;
+    }
+    .disease-hero {
+        padding: 30px 0 20px 0;
+    }
+}
